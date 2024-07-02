@@ -1,0 +1,169 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  --header-background-color: lightblue;
+  --button-background-color: #333333;
+  --button-text-color: #ffffff;
+  --balance-background-color: #ccc;
+  --table-header-background-color: lightblue;
+  --table-cell-background-color: #f0f0f0;
+
+  /* Transition for smooth mode switch */
+  --transition-duration: 0.5s;
+  --transition-timing-function: ease;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  width: 50%;
+  right: 25%;
+  left: 25%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    color var(--transition-duration) var(--transition-timing-function);
+}
+
+header {
+  height: 100px;
+  background-color: var(--header-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
+}
+
+header h1 {
+  margin: 0;
+  flex: 1;
+  padding-left: 50px;
+  text-align: center;
+  color: var(--text-color);
+  transition: color var(--transition-duration) var(--transition-timing-function);
+}
+
+.mode {
+  position: relative;
+  display: inline-block;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: var(--button-background-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
+}
+
+.current-balance {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--balance-background-color);
+  border: none;
+  border-radius: 10px;
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
+}
+
+.balance-box {
+  padding: 20px;
+}
+
+.section {
+  margin: 20px;
+}
+
+.section-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-input input {
+  width: 40%;
+  height: 40px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    color var(--transition-duration) var(--transition-timing-function),
+    border-color var(--transition-duration) var(--transition-timing-function);
+}
+
+.button {
+  width: 20%;
+  height: 40px;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    color var(--transition-duration) var(--transition-timing-function);
+}
+
+.list-income {
+  font-weight: bold;
+  list-style-type: none;
+}
+
+.list-expense {
+  font-weight: bold;
+  list-style-type: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  color: var(--text-color);
+  transition: color var(--transition-duration) var(--transition-timing-function);
+}
+
+td {
+  background-color: var(--table-cell-background-color);
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--table-header-background-color);
+  transition: background-color var(--transition-duration)
+    var(--transition-timing-function);
+}
+
+.form-field-error {
+  background-color: rgb(215, 84, 84);
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+    right: unset;
+    left: unset;
+  }
+}
+
+body.dark-mode {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --header-background-color: #333333;
+  --button-background-color: lightblue;
+  --button-text-color: #121212;
+  --balance-background-color: #1e1e1e;
+  --table-header-background-color: #333333;
+  --table-cell-background-color: #333333;
+}
